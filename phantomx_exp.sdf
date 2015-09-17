@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<sdf version='1.5'>
+  <model name='phantomx'>
+    <link name='MP_BODY'>
+      <pose>0 0 1 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.975599</mass>
+        <inertia>
+          <ixx>3.10818</ixx>
+          <ixy>-0.254602</ixy>
+          <ixz>2.03182</ixz>
+          <iyy>6.37878</iyy>
+          <iyz>0.164179</iyz>
+          <izz>5.33164</izz>
+        </inertia>
+      </inertial>
+      <collision name='MP_BODY_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/body_coll.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='MP_BODY_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/body.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='fixed' type='revolute'>
+      <child>MP_BODY</child>
+      <parent>world</parent>
+      <axis>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+        <xyz>0 0 1</xyz>
+      </axis>
+    </joint>
+    <link name='c1_lf'>
+      <pose>0.1248 0.06164 1.00112 3.14159 -1.57071 -0.785398</pose>
+      <inertial>
+        <pose>0 -0.027 0 0 -0 0</pose>
+        <mass>0.0487154</mass>
+        <inertia>
+          <ixx>0.0062791</ixx>
+          <ixy>-0.000594735</ixy>
+          <ixz>-4.78731e-05</ixz>
+          <iyy>0.0163831</iyy>
+          <iyz>-0.000594518</iyz>
+          <izz>0.00627913</izz>
+        </inertia>
+      </inertial>
+      <collision name='c1_lf_collision'>
+        <pose>0 -0.02633 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <collision name='c1_lf_collision_c1_lf_1'>
+        <pose>0 -0.02767 0 0 1.5704 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/connect_coll.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='c1_lf_visual'>
+        <pose>0 -0.0252 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/connect.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <visual name='c1_lf_visual_c1_lf_1'>
+        <pose>0 -0.0288 0 0 1.5704 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/connect.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <velocity_decay/>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='j_c1_lf' type='revolute'>
+      <child>c1_lf</child>
+      <parent>MP_BODY</parent>
+      <axis>
+        <xyz>6.3e-05 -6.3e-05 1</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.001</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='thigh_lf'>
+      <pose>0.162984 0.099824 1.00112 0 0.000307 2.35619</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='thigh_lf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/thigh_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='thigh_lf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/thigh_l.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='j_thigh_lf' type='revolute'>
+      <child>thigh_lf</child>
+      <parent>c1_lf</parent>
+      <axis>
+        <xyz>-0.707107 0.707107 -0.000307</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.001</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name='tibia_lf'>
+      <pose>0.208595 0.145429 0.986616 -1.5707 -0.000307 -0.785401</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.0243577</mass>
+        <inertia>
+          <ixx>0.00514111</ixx>
+          <ixy>-0.000575303</ixy>
+          <ixz>-2.4729e-05</ixz>
+          <iyy>0.00819157</iyy>
+          <iyz>-1.92231e-05</iyz>
+          <izz>0.00113798</izz>
+        </inertia>
+      </inertial>
+      <collision name='tibia_lf_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/tibia_l_coll.STL</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tibia_lf_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://phantomx_description/meshes/tibia_l.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Grey</name>
+            <uri>__default__</uri>
+          </script>
+        </material>
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+    </link>
+    <joint name='j_tibia_lf' type='revolute'>
+      <child>tibia_lf</child>
+      <parent>thigh_lf</parent>
+      <axis>
+        <xyz>0.707105 -0.707109 0.000307</xyz>
+        <limit>
+          <lower>-2.61799</lower>
+          <upper>2.61799</upper>
+          <effort>2.8</effort>
+          <velocity>5.65487</velocity>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0.001</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <static>0</static>
+    <plugin name='gazebo_ros_control' filename='libgazebo_ros_control.so'>
+      <robotNamespace>/phantomx</robotNamespace>
+    </plugin>
+  </model>
+</sdf>
